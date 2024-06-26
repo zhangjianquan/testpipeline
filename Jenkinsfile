@@ -43,22 +43,5 @@ pipeline{
            }
         }
     }
-    post {
-        success {
-            dingtalk(
-                robot: 'Jenkins-DingDing',(是之前随便起的id)
-                type: 'MARKDOWN',
-                title: "success: ${JOB_NAME}",
-                text: ["-成功构建: ${JOB_NAME}! \n-  版本: ${tag} \n- 持续时间: ${currentBuild.durationString}"]
-            )
-        }
-        failure {
-            dingtalk(
-                robot: 'Jenkins-DingDing',(是之前随便起的id)
-                type: 'MARKDOWN',
-                title: "success: ${JOB_NAME}",
-                text: ["-构建失败: ${JOB_NAME}! \n-  版本: ${tag} \n- 持续时间: ${currentBuild.durationString}"]
-            )
-        }
     }
 }
